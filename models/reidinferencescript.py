@@ -208,8 +208,8 @@ def run_market_folder_inference(model_path, market_root, batch_size=32, device="
     gallery_ds = MarketFolderDataset(os.path.join(market_root, "gallery"), transform)
 
     # Use only 1% of dataset for quick test
-    query_dl = torch.utils.data.DataLoader(subset_dataset(query_ds, 0.01), batch_size=batch_size, shuffle=False, num_workers=0)
-    gallery_dl = torch.utils.data.DataLoader(subset_dataset(gallery_ds, 0.01), batch_size=batch_size, shuffle=False, num_workers=0)
+    query_dl = torch.utils.data.DataLoader(subset_dataset(query_ds, 1.00), batch_size=batch_size, shuffle=False, num_workers=0)
+    gallery_dl = torch.utils.data.DataLoader(subset_dataset(gallery_ds, 1.00), batch_size=batch_size, shuffle=False, num_workers=0)
 
     print(f"Query images: {len(query_ds)}, Gallery images: {len(gallery_ds)}")
 
